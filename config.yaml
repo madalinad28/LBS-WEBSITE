@@ -1,15 +1,16 @@
 baseURL: https://madalinadumitrescu.netlify.app/
 languageCode: en-us
 title: Portfolio website for Madalina Dumitrescu
-theme: Hyperspace
+theme: forty
 googleAnalytics: ''
 disqusShortname: ''
 params:
   banner:
     buttonText: Get Started
     subtitle: |-
-      Portoflio Website
-    title: Hi, my name is Madalina
+      Portofolio Website
+    title: Madalina Dumitrescu
+    image: pic02.jpg
   blog: {}
   contact:
     address:
@@ -34,7 +35,7 @@ params:
     text: Please visit [this page](/)
   favicon: favicon.ico
   footer:
-    copyright: Company Name
+    copyright: London Business School
     enable: yes
     quicklinks:
       - alt: HTML5 UP
