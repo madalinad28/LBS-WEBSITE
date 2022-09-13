@@ -1,7 +1,7 @@
 baseURL: https://madalinadumitrescu.netlify.app/
 languageCode: en-us
 title: Portfolio website for Madalina Dumitrescu
-theme: forty
+theme: Hyperspace
 googleAnalytics: ''
 disqusShortname: ''
 params:
