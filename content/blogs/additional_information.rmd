@@ -18,35 +18,39 @@ library(gapminder)  # gapminder dataset
 library(here)
 library(downloadthis)
 ```
-*  **London Business School**               
 
-*Course*: Reading for Masters in Analytics and Management – Merit Scholar <br>
-*Attended:* 2022-2023 <br>
-*Relevant Courses:* Data Visualization, Applied Statistics, Data Management <br>
-
-```{r load image_6, warning=FALSE, message=FALSE, echo=FALSE}
-knitr::include_graphics("/img/blogs/education/lbs.jpg",error=FALSE)
+```{r load image_12, out.width = "50px", warning=FALSE, message=FALSE, echo=FALSE}
+knitr::include_graphics("/img/blogs/extra/wes.jpeg",error=FALSE)
 ```
-
-*  **University of Warwick**               
-
-*Course*: BSc Computer Science with Business Studies (with Intercalated Year), Second Upper Class <br>
-*Attended:* 2018-2022 <br>
-*Relevant Courses:* Data Visualization, Design of Information Structures, Database Systems, Managing of the Digital Era <br>
-*Relevant Projects*: [Digital Innovations in the Fashion Industry](./blogs/final_project.pdf)
-
-```{r load image_5, warning=FALSE, message=FALSE, echo=FALSE}
-knitr::include_graphics("/img/blogs/education/warwick.png",error=FALSE)
+<br>
+2021-2022 <br>
+ **Technology Team Head Coordinator**;<br>
+     Warwick Economics Summit, Coventry, UK <br>
+     *● Led a team of 5 students responsible for the maintenance and supervision of the technical aspects of the biggest student-run conference in Europe (website, app, live-streaming, on-site equipment handling) * <br>
+     
+```{r load image_13, out.width = "50px", warning=FALSE, message=FALSE, echo=FALSE}
+knitr::include_graphics("/img/blogs/extra/algorithmics.png",error=FALSE)
 ```
-
-*  **Univeristat Pompeu Fabra**               
-
-*Course*: Bsc Economics and Business Administration  <br>
-*Attended:* 2021-2021 <br>
-*Relevant Courses:* Entreprenourship, Consumer Behaviour, Financial Management  <br>
-
-*  **York University - Schulich School of Business**              
-
-*Course*: Bsc Business Administration   <br>
-*Attended:* 2020-2020 <br>
-*Relevant Courses:* Marketing Management, Managing Business In Developing Countries  <br>
+<br>
+2021-2022 <br>
+ **Python Teacher**;<br>
+     Algorithmics Academy, Bucharest, Romania <br>
+     *● Deepened my communication and problem-solving skills by providing adequate programming lessons to secondary school pupils and constantly adapting the teaching materials to their skills and understanding level* <br>
+     
+```{r load image_14, out.width = "50px", warning=FALSE, message=FALSE, echo=FALSE}
+knitr::include_graphics("/img/blogs/extra/enactus.png",error=FALSE)
+```
+<br>
+2018-2019 <br>
+ **Junior Consultant**;<br>
+    Enactus Warwick, Coventry, UK  <br>
+     *● Developed a digital marketing strategy for an NGO under the supervision of a Deloitte expert, which enhanced their online presence by 50% after 3 months from its implementation * <br>
+     
+```{r load image_15, out.width = "50px", warning=FALSE, message=FALSE, echo=FALSE}
+knitr::include_graphics("/img/blogs/extra/aiesec.png",error=FALSE)
+```
+<br>
+2018-2019 <br>
+ **Support Team Coordinator**;<br>
+     AIESEC Warwick, Coventry, UK <br>
+     *● Coordinated a team of 10 in charge of CV and Career mentorship scheme that provided services to over 100 students * <br>

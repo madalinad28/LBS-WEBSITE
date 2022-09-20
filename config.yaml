@@ -60,7 +60,7 @@ params:
   navigation:
     button1:
       - name: Projects
-        url: projects/project1
+        url: projects
     button2:
       - name: Download CV
         url: files/cv_madalina_dumitrescu.pdf
@@ -75,8 +75,6 @@ params:
         url: blogs/professional_experience
       - name: Additional Information
         url: blogs/additional_information
-      - name: Elements
-        url: elements.html
     menu: Menu
     subtitle: Madalina Dumitrescu
     title: Projects Portoflio
@@ -94,12 +92,13 @@ params:
       - image: bikes.jpg
         subtitle: Project 3
         title: TFL Strikes Influence on Bike Rentals
-        url: blogs/magna
+        url: projects/project3
       - image: energy.jpg
         subtitle: Project 4
         title: Renewable Energy Consumtpion in the World
-        url: blogs/ipsum
+        url: projects/project4
       
+    
   two:
     buttonText: About Me
     enable: yes

@@ -1,5 +1,5 @@
 ---
-title: 'Proffesional Experience'
+title: 'Professional Experience'
 author: "Madalina Dumitrescu"
 date: "September 2022"
 image: 
@@ -18,35 +18,50 @@ library(gapminder)  # gapminder dataset
 library(here)
 library(downloadthis)
 ```
-*  **Citi Bank, London, UK**               
-
-*Position*: Summer Placement Technology Intern <br>
-*Attended:* June 2021 - September 2021 <br>
-*Highlights: * Data Visualization, Applied Statistics, Data Management <br>
-
-```{r load image_6, warning=FALSE, message=FALSE, echo=FALSE}
-knitr::include_graphics("/img/blogs/education/lbs.jpg",error=FALSE)
+---------
+```{r load image_8, out.width = "50px", warning=FALSE, message=FALSE, echo=FALSE}
+knitr::include_graphics("/img/blogs/proffesional/Citibank.jpg",error=FALSE)
 ```
+<br>
+2021-2021 <br>
+ **Summer Placement Technology Intern (3 months)**;<br>
+     CITI BANK, London, UK <br>
+     *•	Worked within the Technology E-Rates team to design and create a more efficient internal error detection and         system monitoring process * <br>
+     *•	Remodeled the system monitoring processes by implementing an effective method of logs collection and centralization through java agents and the elastic search API, reducing the error detection time and providing better state system analysis  * <br>
 
-*  **University of Warwick**               
-
-*Course*: BSc Computer Science with Business Studies (with Intercalated Year), Second Upper Class <br>
-*Attended:* 2018-2022 <br>
-*Relevant Courses:* Data Visualization, Design of Information Structures, Database Systems, Managing of the Digital Era <br>
-*Relevant Projects*: [Digital Innovations in the Fashion Industry](url:./files/final_project.pdf)
-
-```{r load image_5, warning=FALSE, message=FALSE, echo=FALSE}
-knitr::include_graphics("/img/blogs/education/warwick.png",error=FALSE)
+```{r load image_9, out.width = "50px", warning=FALSE, message=FALSE, echo=FALSE}
+knitr::include_graphics("/img/blogs/proffesional/Citibank.jpg",error=FALSE)
 ```
+<br>
+2020-2020 <br>
+ **Summer Technology Intern (2 months)**;<br>
+     CITI BANK, London, UK <br>
+     *•Created an internal web-based platform which facilitated virtual networking within Citi, increasing communication between junior employees by 50%; used Python and Outlook Calendar PI for an efficient synchronization with the user's schedule  * <br>
+     *•	Designed a mental well-being Citi application by using UX design tools (AdobeXD) and data visualisation instruments (Tableau, Power BI) * <br>
+     
+```{r load image_10, out.width = "50px", warning=FALSE, message=FALSE, echo=FALSE}
+knitr::include_graphics("/img/blogs/proffesional/bnp.jpg",error=FALSE)
+```
+<br>
+2019-2019 <br>
+ **Project Management Intern (2 months)**;<br>
+     BNP PARIBAS, Bucharest, Romania <br>
+     *•	Integrated a new process in the management procedure, optimizing the selection of proposed internal projects and launched an Agile training program to efficientize the working streamline   * <br>
+     *•	Assisted the selection process of the internal projects, ensuring that all of the selected projects meet the given criterias  * <br>
+    
+```{r load image_11, out.width = "50px", warning=FALSE, message=FALSE, echo=FALSE}
+knitr::include_graphics("/img/blogs/proffesional/Citibank.jpg",error=FALSE)
+```
+<br>
+2019-2019 <br>
+ **Technology Spring Week Intern (1 week)**;<br>
+     CITI BANK, London, UK <br>
+     *•Built a script program for production support team which sends automated error messages to the trader by including all the necessary details whenever a trading fails, fastening the error correction processes by 25%   * <br>
+    
+    
 
-*  **Univeristat Pompeu Fabra**               
-
-*Course*: Bsc Economics and Business Administration  <br>
-*Attended:* 2021-2021 <br>
-*Relevant Courses:* Entreprenourship, Consumer Behaviour, Financial Management  <br>
-
-*  **York University - Schulich School of Business**              
-
-*Course*: Bsc Business Administration   <br>
-*Attended:* 2020-2020 <br>
-*Relevant Courses:* Marketing Management, Managing Business In Developing Countries  <br>
+    
+    
+    
+    
+    

@@ -21,7 +21,7 @@ library(here)
 
 # Brief Description
 
-```{r load image, warning=FALSE, message=FALSE, echo=FALSE}
+```{r load image, out.width = "400px", warning=FALSE, message=FALSE, echo=FALSE}
 knitr::include_graphics("/img/blogs/me_photo.png",error=FALSE)
 ```
 
@@ -38,7 +38,7 @@ On top of that, my desire to enrich my understanding of how technology shapes th
 ## Romania
 Until I started my higher education journey, I lived in Romania, more specifically Bucharest, where I studied at one of the best high schools in the country, which helped me define myself and the trajectory that I wanted in my life. 
 
-```{r load image_2, warning=FALSE, message=FALSE, echo=FALSE}
+```{r load image_2,  out.width = "400px", warning=FALSE, message=FALSE, echo=FALSE}
 knitr::include_graphics("/img/blogs/about_me/about_me_1.png",error=FALSE)
 ```
 
@@ -46,27 +46,32 @@ knitr::include_graphics("/img/blogs/about_me/about_me_1.png",error=FALSE)
 After I graduated, I decided to pursue my higher studies in the UK, at University of Warwick, where I prepared for a degree in both Computer Science and Business. Here, I had the chance to strongly develop my technical skills through the numerous projects I had, while also enhancing my personal capabilities, through the [extra-curricular activities](/blogs/additional_information) experiences I took part in. 
 
 ## Year Abroad
+
 For my third year, I decided to embark on a new journey and pursue an year abroad, as I was eager to develop my skills in new environments and grow my capacity to adapt. Therefore, I did my first semester in Canada, at Schulich School of Business, York University, program which I attended online due to the Covid19 crisis. However, this setback did not hold me back from making the most of my virtual experience, by getting involved with the Exchange Students Club and other relevant activities. For my second semester, I was lucky enough to attend Universitat Pompeu Fabra in Barcelona, Spain, in person, where I enhanced my understanding of business concepts while also enjoying a sunny and marvelous city.
 
-```{r load image_3, warning=FALSE, message=FALSE, echo=FALSE}
+```{r load image_3,  out.width = "400px", warning=FALSE, message=FALSE, echo=FALSE}
 knitr::include_graphics("/img/blogs/about_me/about_me_2 .png",error=FALSE)
 ```
 
 ## Summer Working Experience
 
-In the 2021 summer, I joined Citi Bank as a summer placement technology analyst. I was part of the e-rates team, whicOverall, the opportunity to be in charge of a complex project through all stages of implementation has given me the chance to understand how technology fits in the financial environment. Thus, it not only provided me with knowledge of industry-applied programming practices but also consolidated my back-end related concepts.h was developing a new component for the trading app that facilitated more effective communication between the sales and trade divisions. My task was to optimise the internal system monitoring process by implementing an efficient solution for logs collection and centralisation. The project focused on switching from a manual approach to handling the logs of each process of the component to a centralised manner that provides a better overview of the whole system and streamline the error detection processes.This project gave me the opportunity to build on my technical skills and develop interpersonally in a dynamic environment. 
+In the 2021 summer, I joined Citi Bank as a summer placement technology analyst. I was part of the e-rates team, whicOverall, the opportunity to be in charge of a complex project through all stages of implementation has given me the chance to understand how technology fits in the financial environment. Thus, it not only provided me with knowledge of industry-applied programming practices but also consolidated my back-end related concepts.h was developing a new component for the trading app that facilitated more effective communication between the sales and trade divisions. My task was to optimise the internal system monitoring process by implementing an efficient solution for logs collection and centralisation. The project focused on switching from a manual approach to handling the logs of each process of the component to a centralised manner that provides a better overview of the whole system and streamline the error detection processes.This project gave me the opportunity to build on my technical skills and develop inter-personally in a dynamic environment. 
 
-```{r load image_4, warning=FALSE, message=FALSE, echo=FALSE}
+```{r load image_4,  out.width = "400px", warning=FALSE, message=FALSE, echo=FALSE}
 knitr::include_graphics("/img/blogs/about_me/about_me_3.png",error=FALSE)
 ```
 
 ## Graduation 
 
-```{r load image_5, warning=FALSE, message=FALSE, echo=FALSE}
+
+```{r load image_5, out.width = "400px", warning=FALSE, message=FALSE, echo=FALSE}
 knitr::include_graphics("/img/blogs/about_me/about_me_4.png",error=FALSE)
 ```
 
 ## London Business School 
 
+
 ## What I am looking forward next
 
+My ambition to work in the tech industry comes from my fascination for how the digital revolution changes people's day-to-day life and my strong desire to actively partake in this driving fast-paced innovative movement. Working in a cutting-edge environment and being able to get involved in initiatives that will define tomorrow’s society are essential components for my future career. 
+Thus, after I finish the Master program, I want to become a business analyst in a fintech company that will expand my understanding of DeFi technologies' usages in the commercial sphere. This professional position is the ideal position for me, as I will be able to apply my diverse technical acumen to analyze, design, and project innovative solutions to business problems. This career will offer me the unique opportunity to act as a liaison between the two sides of a business: the front-office and back-office. While the former will require great communication skills and a detail-oriented perspective, the latter will demand good technical cross-over and a rigorous work style. This blend will equip me with both social and technical competencies, essential for understanding the impact of decentralized financial solutions on businesses. 
