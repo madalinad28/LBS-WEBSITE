@@ -1,5 +1,5 @@
 ---
-title: "Gender Gap - Mith or Fact Analysis"
+title: "Gender Pay Gap - Mith or Fact Analysis on Omega Group"
 author: "Misha Aggarwal, Madalina Dumitrescu, Yung-Chieh Hsu, Wendy Li, Christoph Plachutta, Tianyi Zhang"
 date: "`r Sys.Date()`"
 image: gender.jpg
@@ -85,11 +85,11 @@ omega_summary
 
 ```
 
-###Results
+#### Results
 
 A glimpse at the summary statistics table provides some clarity of the salary distribution. It is clearly visible that the standard deviation, sample size, standard error and margin of error are very similar for both genders. Meanwhile, the min and max values of the confidence intervals don't overlap. This essentially tells us that while male and female employees both experience the same variance of salaries within their gender (most likely due to position), the average from which these salaries vary from is significantly different. We can therefore claim with 95% confidence that the true average salary for the female population at Omega is lower than that of the male population.
 
-###Hypothesis testing
+### Hypothesis testing
 
 I also ran a hypothesis testing, assuming as a null hypothesis that the mean difference in salaries is zero, or that, on average, men and women make the same amount of money. 
 
@@ -127,13 +127,13 @@ hypothesis_testing_salary %>%
 
 ```
 
-
+### Results
 
 We reject the null hypothesis that there is no difference in average salary at Omega based on gender. A p-value of 0.0002 is statistically significant and the confidence interval of the two sample t-test does not include 0. The graph also highlights that a bootstrap simulation yields the same result. The red line informs us that the observed difference is outside the values we would expect if there was no significant difference in salaries. It should also be mentioned that the t-test for the difference in means shows the confidence interval of how much less female employees earn on average compared to men.
 
-## Relationship Experience - Gender?
+## Relationship Experience - Gender
 
-At the board meeting, someone raised the issue that there was indeed a substantial difference between male and female salaries, but that this was attributable to other reasons such as differences in experience. A questionnaire send out to the 50 executives in the sample reveals that the average experience of the men is approximately 21 years, whereas the women only have about 7 years experience on average (see table below).
+Now, I will look into whether the substantial difference beteween male and female salaries is attributed to other reasons such as differences in experience. Thus, a questionnaire send out to the 50 executives in the sample reveals that the average experience of the men is approximately 21 years, whereas the women only have about 7 years experience on average (see table below).
 
 ```{r, experience_stats}
 
@@ -142,11 +142,11 @@ favstats (experience ~ gender, data=omega)
 
 ```
 
-> Based on this evidence, can you conclude that there is a significant difference between the experience of the male and female executives? 
+### Results
 
 Looking at the quartile values, we can see that Q3 for female employees is lower than Q1 of male employees. If we were to graph the experience grouped by gender, we would see that the IQR of female and male experience would not overlap. This means that we can safely say that at least 75% of male employees in the sample have more experience than female employees. While this might indicate a statistically significant difference in means, we cannot confidently claim that the average experience of female employees at Omega is lower than that of men. We should conduct a hypothesis test.
 
-> Perform similar analyses as in the previous section. Does your conclusion validate or endanger your conclusion about the difference in male and female salaries?
+### Hypothesis Testing
 
 ```{r, hypothesis_testing2}
 
@@ -181,15 +181,17 @@ hypothesis_testing_exp %>%
   get_p_value(obs_stat = obs_diff_exp, direction = "two-sided")
 
 ```
+
+### Results
+
 The hypothesis test supports our prior expectation that there is a significant difference in the means of education between female and male employees. The confidence interval of the two sample t-test for the difference in means does not include 0 and the p-value is considerable lower than 0.05. We reject the null hypothesis, and claim 95% confidence that the average experience of women at Omega is lower than that of men. Again, it should be mentioned that we are working with a rather small sample size. And while the experience is lower, we would expect that this is not the only factor affecting salary. Discrimination might still be at work.
 
-## Relationship Salary - Experience ?
+## Relationship Salary - Experience 
 
 Someone at the meeting argues that clearly, a more thorough analysis of the relationship between salary and experience is required before any conclusion can be drawn about whether there is any gender-based salary discrimination in the company.
 
-> Analyse the relationship between salary and experience. 
+###  Salary and experience relationship analysis
 
-Draw a scatterplot to visually inspect the data.
 
 ```{r, salary_exp_scatter}
 
@@ -206,9 +208,7 @@ omega %>%
 
 ```
 
-## Check correlations between the data
-
-You can use `GGally:ggpairs()` to create a scatterplot and correlation matrix. Essentially, we change the order our variables will appear in and have the dependent variable (Y), salary, as last in our list. We then pipe the dataframe to `ggpairs()` with `aes` arguments to colour by `gender` and make this plots somewhat transparent (`alpha  = 0.3`).
+#### Check correlations between the data
 
 ```{r, ggpairs}
 omega %>% 
@@ -217,6 +217,6 @@ omega %>%
   theme_bw()
 ```
 
-> Look at the salary vs experience scatterplot. What can you infer from this plot? Explain in a couple of sentences
+### Results
 
 When looking at the scatterplot, we can see that female employees in the sample have less experience than their male counterparts, as discussed earlier. We can also observe that employees with no experience are exclusively female. We cannot safely claim from the scatterplot that there is systematic discrimination at work at Omega. First of all, the low amount of data points make a best-fit line rather imprecise. Secondly, while there are male employees earning more than their female counterparts for certain years of experience, there are also men with more experience earning the same or less. A regression controlling for factors such as position and department would paint a clearer picture of whether women earn less in the exact same position than men. Nevertheless, we see that men in the sample earn higher salaries, with most observations at the top of the y axis belonging to males. It can be argued that while women might not get significantly less money for a given job, Omega prefers to hire men for their more senior and better paid jobs. This would of course also be discrimination, however slightly less easy to detect.

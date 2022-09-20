@@ -1,7 +1,8 @@
 ---
-title: "Session 2: Homework 1"
-author: "Group 8"
+title: "IMDB Movie Analysis"
+author: "Misha Aggarwal, Madalina Dumitrescu, Yung-Chieh Hsu, Wendy Li, Christoph Plachutta, Tianyi Zhang"
 date: "`r Sys.Date()`"
+image: imdb..png
 output:
   html_document:
     theme: flatly
@@ -40,7 +41,6 @@ library(tidyquant)
 library(dplyr)
 library(ggplot2)
 ```
-# Analysis of movies- IMDB dataset
 
 ```{r,load_movies, warning=FALSE, message=FALSE}
 # Assign IMDB data to variable
@@ -48,9 +48,7 @@ movies <- read_csv(here::here("data", "movies.csv"))
 
 ```
 
-## Use your data import, inspection, and cleaning skills to answer the following:
-
--   Are there any missing values (NAs)? Are all entries distinct or are there duplicate entries?
+### Overview of the dataset
 
 There are no missing values according to the skim function. Nevertheless, we notice some duplicate values, for example "Nightmare on Elm Street" or "Alice in Wonderland". We have to be careful to look at more than just the title in identifying duplicates, as some movies could have the same name, but be released twice on different dates or have a different director.
 
@@ -60,14 +58,13 @@ skim(movies)
 
 ```
 
--   Produce a table with the count of movies by genre, ranked in descending order
-
+### Movie count by genre, ranked in descending order Data Frame
     ```{r,count_of_movies}
     movies%>%
       count(sort = TRUE,genre)
     ```
 
--   Produce a table with the average gross earning and budget (`gross` and `budget`) by genre. Calculate a variable `return_on_budget` which shows how many \$ did a movie make at the box office for each \$ of its budget. Ranked genres by this `return_on_budget` in descending order
+### Average gross earnings and budget by genre Data Frame
 
     ```{r,avg_gross_budget}
     # Create table with the average gross earning and budget
@@ -80,7 +77,7 @@ skim(movies)
       arrange(desc(return_on_budget))
     ```
 
--   Produce a table that shows the top 15 directors who have created the highest gross revenue in the box office. Don't just show the total gross amount, but also the mean, median, and standard deviation per director.
+### Top 15 directors of the highest gross revenue in the box office Data Frame
 
     ```{r,top_15}
     # Calculate summary statistics for top 15 directors 
@@ -95,7 +92,7 @@ skim(movies)
       slice_max(sum_gross,n = 15)
     ```
 
--   Finally, ratings. Produce a table that describes how ratings are distributed by genre. We don't want just the mean, but also, min, max, median, SD and some kind of a histogram or density graph that visually shows how ratings are distributed.
+### Ratings distribution by genre
 
     ```{r,rating}
     # Calculate summary statistics for ratings by genre
@@ -115,9 +112,9 @@ skim(movies)
       theme_bw()
     ```
 
-## Use `ggplot` to answer the following
+## Movie Box Office Revenue analysis
 
--   Examine the relationship between `gross` and `cast_facebook_likes`. Produce a scatterplot and write one sentence discussing whether the number of facebook likes that the cast has received is likely to be a good predictor of how much money a movie will make at the box office. What variable are you going to map to the Y- and X- axes?
+### Are Facebook Likes of cast members a good predictor for how much a movie will make?
 
 While there seems to be a minor correlation between the amount of cast facebook likes and the money a movie makes, the relationship is not strong enough to make it a good predictor of a movie's success.
 
@@ -130,7 +127,7 @@ ggplot(aes(x=cast_facebook_likes, y = gross)) +
   theme_bw()
 ```
 
--   Examine the relationship between `gross` and `budget`. Produce a scatterplot and write one sentence discussing whether budget is likely to be a good predictor of how much money a movie will make at the box office.
+### Is budget a good predictor of how much money a movie will make?
 
 While a budget is surely not a guarantor of movie success , the fitted line has a positive slope and therefore implies that with rising budget comes rising gross revenue.
 
@@ -144,7 +141,7 @@ movies%>%
 
 ```
 
--   Examine the relationship between `gross` and `rating`. Produce a scatterplot, faceted by `genre` and discuss whether IMDB ratings are likely to be a good predictor of how much money a movie will make at the box office. Is there anything strange in this dataset?
+### Are IMDB ratings a good predictor of how much a movie will make?
 
 Generally, higher ratings indicates higher gross earnings for all genres for which we have a significant amount of data. However, we can also see that it is possible for movies to have a good rating while not making a lot of money. This most likely concern the likes of indie movies, that receive strong support but never make it into the pop culture.
 
