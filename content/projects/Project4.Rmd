@@ -11,9 +11,6 @@ output:
     toc: yes
     toc_float: yes
     code_folding: show
-editor_options: 
-  markdown: 
-    wrap: 72
 ---
 
 ```{r, setup, include=FALSE}
@@ -106,8 +103,8 @@ countries <-  wb_cachelist$countries %>%
 
 ```
 
-
 ###Top 20 highest and lowest renewable energy country contributions 
+
 ```{r min-max_renewables, echo=FALSE, out.width="100%", fig.width = 10.3, fig.height = 5.5}
 
 # Select relevant columns and pivot data frame into wide format
@@ -154,7 +151,7 @@ combined_renew_graph +
 
 ```
 
-### Analysis between CO2 per capita emissions and the deployment of renewables
+
 
 If percentage of renewable energy produced would have a negative correlation with CO2 emissions per capita, we would expect the data points to move along a negative slope from the top left towards the bottom right of the chart. Our observations yield interesting insights. When looking at poorer countries (low and lower middle income), we see generally lower CO2 emissions, but also cannot claim any significant effect of percentage of renewable energy produced on these emissions. The data points move along a horizontal line. In contrast, the wealthier countries (upper middle and high income) exhibit higher emissions, but we can see a slight correlation between the graphed variables. Nevertheless, this assertion should be viewed with a sceptical eye before assessing whether the correlation is statistically significant. The graphs provide a good first indication, but further analysis is recommended.
 
