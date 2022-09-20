@@ -1,15 +1,52 @@
 ---
-categories:
-- ""
-- ""
-date: "2017-10-31T22:26:13-05:00"
-description: Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna
-  sed nunc rhoncus condimentum sem. In efficitur ligula tate urna. Maecenas massa
-  sed magna lacinia magna pellentesque lorem ipsum dolor. Nullam et orci eu lorem
-  consequat tincidunt. Vivamus et sagittis tempus.
-draft: false
-image: pic08.jpg
-keywords: ""
-slug: professional_experience
-title: Professional Experience
+title: 'Proffesional Experience'
+author: "Madalina Dumitrescu"
+date: "September 2022"
+image: 
+output:
+  html_document:
+    highlight: zenburn
+    theme: flatly
+    toc: yes
+    toc_float: yes
+  word_document:
+    toc: yes
 ---
+```{r load-libraries, warning=FALSE, message=FALSE, echo=FALSE}
+library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
+library(gapminder)  # gapminder dataset
+library(here)
+library(downloadthis)
+```
+*  **Citi Bank, London, UK**               
+
+*Position*: Summer Placement Technology Intern <br>
+*Attended:* June 2021 - September 2021 <br>
+*Highlights: * Data Visualization, Applied Statistics, Data Management <br>
+
+```{r load image_6, warning=FALSE, message=FALSE, echo=FALSE}
+knitr::include_graphics("/img/blogs/education/lbs.jpg",error=FALSE)
+```
+
+*  **University of Warwick**               
+
+*Course*: BSc Computer Science with Business Studies (with Intercalated Year), Second Upper Class <br>
+*Attended:* 2018-2022 <br>
+*Relevant Courses:* Data Visualization, Design of Information Structures, Database Systems, Managing of the Digital Era <br>
+*Relevant Projects*: [Digital Innovations in the Fashion Industry](url:./files/final_project.pdf)
+
+```{r load image_5, warning=FALSE, message=FALSE, echo=FALSE}
+knitr::include_graphics("/img/blogs/education/warwick.png",error=FALSE)
+```
+
+*  **Univeristat Pompeu Fabra**               
+
+*Course*: Bsc Economics and Business Administration  <br>
+*Attended:* 2021-2021 <br>
+*Relevant Courses:* Entreprenourship, Consumer Behaviour, Financial Management  <br>
+
+*  **York University - Schulich School of Business**              
+
+*Course*: Bsc Business Administration   <br>
+*Attended:* 2020-2020 <br>
+*Relevant Courses:* Marketing Management, Managing Business In Developing Countries  <br>

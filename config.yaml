@@ -63,7 +63,7 @@ params:
         url: projects/project1
     button2:
       - name: Download CV
-        url: '#'
+        url: files/cv_madalina_dumitrescu.pdf
     links:
       - name: Home
         url: '#'
@@ -72,7 +72,7 @@ params:
       - name: Education
         url: blogs/education
       - name: Professional Experience
-        url: blogs/pofessional_experience
+        url: blogs/professional_experience
       - name: Additional Information
         url: blogs/additional_information
       - name: Elements
@@ -83,30 +83,23 @@ params:
   tiles:
     enable: yes
     showcase:
-      - image: pic01.jpg
+      - image: gender.jpg
         subtitle: Project 1
-        title: Aliquam
+        title: Gender Pay Gap - Mith or Fact Analysis
         url: projects/project1
-      - image: pic02.jpg
+      - image: imdb..png
         subtitle: Project 2
-        title: Tempus
-        url: blogs/tempus
-      - image: pic03.jpg
+        title: IMDB Movies Analysis
+        url: projects/project2
+      - image: bikes.jpg
         subtitle: Project 3
-        title: Magna
+        title: TFL Strikes Influence on Bike Rentals
         url: blogs/magna
-      - image: pic04.jpg
+      - image: energy.jpg
         subtitle: Project 4
-        title: Ipsum
+        title: Renewable Energy Consumtpion in the World
         url: blogs/ipsum
-      - image: pic05.jpg
-        subtitle: Project 5
-        title: Consequat
-        url: blogs/ipsum
-      - image: pic06.jpg
-        subtitle: Project 6
-        title: Etiam
-        url: blogs/ipsum
+      
   two:
     buttonText: About Me
     enable: yes

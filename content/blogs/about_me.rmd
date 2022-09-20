@@ -52,7 +52,9 @@ For my third year, I decided to embark on a new journey and pursue an year abroa
 knitr::include_graphics("/img/blogs/about_me/about_me_2 .png",error=FALSE)
 ```
 
-## Summer Experience
+## Summer Working Experience
+
+In the 2021 summer, I joined Citi Bank as a summer placement technology analyst. I was part of the e-rates team, whicOverall, the opportunity to be in charge of a complex project through all stages of implementation has given me the chance to understand how technology fits in the financial environment. Thus, it not only provided me with knowledge of industry-applied programming practices but also consolidated my back-end related concepts.h was developing a new component for the trading app that facilitated more effective communication between the sales and trade divisions. My task was to optimise the internal system monitoring process by implementing an efficient solution for logs collection and centralisation. The project focused on switching from a manual approach to handling the logs of each process of the component to a centralised manner that provides a better overview of the whole system and streamline the error detection processes.This project gave me the opportunity to build on my technical skills and develop interpersonally in a dynamic environment. 
 
 ```{r load image_4, warning=FALSE, message=FALSE, echo=FALSE}
 knitr::include_graphics("/img/blogs/about_me/about_me_3.png",error=FALSE)

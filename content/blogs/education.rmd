@@ -18,14 +18,35 @@ library(gapminder)  # gapminder dataset
 library(here)
 library(downloadthis)
 ```
+*  **London Business School**               
+
+*Course*: Reading for Masters in Analytics and Management – Merit Scholar <br>
+*Attended:* 2022-2023 <br>
+*Relevant Courses:* Data Visualization, Applied Statistics, Data Management <br>
+
+```{r load image_6, warning=FALSE, message=FALSE, echo=FALSE}
+knitr::include_graphics("/img/blogs/education/lbs.jpg",error=FALSE)
+```
+
 *  **University of Warwick**               
 
+*Course*: BSc Computer Science with Business Studies (with Intercalated Year), Second Upper Class <br>
 *Attended:* 2018-2022 <br>
 *Relevant Courses:* Data Visualization, Design of Information Structures, Database Systems, Managing of the Digital Era <br>
-*Relevant Projects*: [Digital Innovations in the Fashion Industry](file:///C:/blogs/final_project.pdf)
-
-
+*Relevant Projects*: [Digital Innovations in the Fashion Industry](./blogs/final_project.pdf)
 
 ```{r load image_5, warning=FALSE, message=FALSE, echo=FALSE}
 knitr::include_graphics("/img/blogs/education/warwick.png",error=FALSE)
 ```
+
+*  **Univeristat Pompeu Fabra**               
+
+*Course*: Bsc Economics and Business Administration  <br>
+*Attended:* 2021-2021 <br>
+*Relevant Courses:* Entreprenourship, Consumer Behaviour, Financial Management  <br>
+
+*  **York University - Schulich School of Business**              
+
+*Course*: Bsc Business Administration   <br>
+*Attended:* 2020-2020 <br>
+*Relevant Courses:* Marketing Management, Managing Business In Developing Countries  <br>

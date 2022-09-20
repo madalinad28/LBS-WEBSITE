@@ -1,49 +1,420 @@
 ---
-title: "Hello R Markdown 2"
-author: "Frida Gomam"
-date: 2020-12-01T21:13:14-05:00
-categories: project2
-slug: project2
+title: "Session 2: Homework 1"
+author: "Group 8"
+date: "2022-09-20"
+output:
+  html_document:
+    theme: flatly
+    highlight: zenburn
+    number_sections: yes
+    toc: yes
+    toc_float: yes
+    code_folding: show
 ---
 
 
 
-<div id="r-markdown" class="section level1">
-<h1>R Markdown</h1>
-<p>This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>.</p>
-<p>You can embed an R code chunk like this:</p>
-<pre class="r"><code>summary(cars)
-##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00
-fit &lt;- lm(dist ~ speed, data = cars)
-fit
-## 
-## Call:
-## lm(formula = dist ~ speed, data = cars)
-## 
-## Coefficients:
-## (Intercept)        speed  
-##     -17.579        3.932</code></pre>
+<div id="analysis-of-movies--imdb-dataset" class="section level1">
+<h1>Analysis of movies- IMDB dataset</h1>
+<pre class="r"><code># Assign IMDB data to variable
+movies &lt;- read_csv(here::here(&quot;data&quot;, &quot;movies.csv&quot;))</code></pre>
+<div id="use-your-data-import-inspection-and-cleaning-skills-to-answer-the-following" class="section level2">
+<h2>Use your data import, inspection, and cleaning skills to answer the following:</h2>
+<ul>
+<li>Are there any missing values (NAs)? Are all entries distinct or are there duplicate entries?</li>
+</ul>
+<p>There are no missing values according to the skim function. Nevertheless, we notice some duplicate values, for example “Nightmare on Elm Street” or “Alice in Wonderland”. We have to be careful to look at more than just the title in identifying duplicates, as some movies could have the same name, but be released twice on different dates or have a different director.</p>
+<pre class="r"><code># Skim IMDB data
+skim(movies)</code></pre>
+<table>
+<caption>(#tab:Skim_data)Data summary</caption>
+<tbody>
+<tr class="odd">
+<td align="left">Name</td>
+<td align="left">movies</td>
+</tr>
+<tr class="even">
+<td align="left">Number of rows</td>
+<td align="left">2961</td>
+</tr>
+<tr class="odd">
+<td align="left">Number of columns</td>
+<td align="left">11</td>
+</tr>
+<tr class="even">
+<td align="left">_______________________</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Column type frequency:</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">character</td>
+<td align="left">3</td>
+</tr>
+<tr class="odd">
+<td align="left">numeric</td>
+<td align="left">8</td>
+</tr>
+<tr class="even">
+<td align="left">________________________</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Group variables</td>
+<td align="left">None</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: character</strong></p>
+<table>
+<colgroup>
+<col width="19%" />
+<col width="13%" />
+<col width="19%" />
+<col width="5%" />
+<col width="5%" />
+<col width="8%" />
+<col width="12%" />
+<col width="15%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="right">min</th>
+<th align="right">max</th>
+<th align="right">empty</th>
+<th align="right">n_unique</th>
+<th align="right">whitespace</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">title</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+<td align="right">83</td>
+<td align="right">0</td>
+<td align="right">2907</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">genre</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">5</td>
+<td align="right">11</td>
+<td align="right">0</td>
+<td align="right">17</td>
+<td align="right">0</td>
+</tr>
+<tr class="odd">
+<td align="left">director</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">3</td>
+<td align="right">32</td>
+<td align="right">0</td>
+<td align="right">1366</td>
+<td align="right">0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Variable type: numeric</strong></p>
+<table style="width:100%;">
+<colgroup>
+<col width="18%" />
+<col width="9%" />
+<col width="12%" />
+<col width="8%" />
+<col width="8%" />
+<col width="6%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="8%" />
+<col width="5%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">skim_variable</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="right">p0</th>
+<th align="right">p25</th>
+<th align="right">p50</th>
+<th align="right">p75</th>
+<th align="right">p100</th>
+<th align="left">hist</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">year</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">2.00e+03</td>
+<td align="right">9.95e+00</td>
+<td align="right">1920.0</td>
+<td align="right">2.00e+03</td>
+<td align="right">2.00e+03</td>
+<td align="right">2.01e+03</td>
+<td align="right">2.02e+03</td>
+<td align="left">▁▁▁▂▇</td>
+</tr>
+<tr class="even">
+<td align="left">duration</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1.10e+02</td>
+<td align="right">2.22e+01</td>
+<td align="right">37.0</td>
+<td align="right">9.50e+01</td>
+<td align="right">1.06e+02</td>
+<td align="right">1.19e+02</td>
+<td align="right">3.30e+02</td>
+<td align="left">▃▇▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">gross</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">5.81e+07</td>
+<td align="right">7.25e+07</td>
+<td align="right">703.0</td>
+<td align="right">1.23e+07</td>
+<td align="right">3.47e+07</td>
+<td align="right">7.56e+07</td>
+<td align="right">7.61e+08</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">budget</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">4.06e+07</td>
+<td align="right">4.37e+07</td>
+<td align="right">218.0</td>
+<td align="right">1.10e+07</td>
+<td align="right">2.60e+07</td>
+<td align="right">5.50e+07</td>
+<td align="right">3.00e+08</td>
+<td align="left">▇▂▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">cast_facebook_likes</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1.24e+04</td>
+<td align="right">2.05e+04</td>
+<td align="right">0.0</td>
+<td align="right">2.24e+03</td>
+<td align="right">4.60e+03</td>
+<td align="right">1.69e+04</td>
+<td align="right">6.57e+05</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">votes</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">1.09e+05</td>
+<td align="right">1.58e+05</td>
+<td align="right">5.0</td>
+<td align="right">1.99e+04</td>
+<td align="right">5.57e+04</td>
+<td align="right">1.33e+05</td>
+<td align="right">1.69e+06</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="odd">
+<td align="left">reviews</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">5.03e+02</td>
+<td align="right">4.94e+02</td>
+<td align="right">2.0</td>
+<td align="right">1.99e+02</td>
+<td align="right">3.64e+02</td>
+<td align="right">6.31e+02</td>
+<td align="right">5.31e+03</td>
+<td align="left">▇▁▁▁▁</td>
+</tr>
+<tr class="even">
+<td align="left">rating</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">6.39e+00</td>
+<td align="right">1.05e+00</td>
+<td align="right">1.6</td>
+<td align="right">5.80e+00</td>
+<td align="right">6.50e+00</td>
+<td align="right">7.10e+00</td>
+<td align="right">9.30e+00</td>
+<td align="left">▁▁▆▇▁</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>Produce a table with the count of movies by genre, ranked in descending order</p>
+<pre class="r"><code>movies%&gt;%
+  count(sort = TRUE,genre)</code></pre>
+<pre><code>## # A tibble: 17 × 2
+##    genre           n
+##    &lt;chr&gt;       &lt;int&gt;
+##  1 Comedy        848
+##  2 Action        738
+##  3 Drama         498
+##  4 Adventure     288
+##  5 Crime         202
+##  6 Biography     135
+##  7 Horror        131
+##  8 Animation      35
+##  9 Fantasy        28
+## 10 Documentary    25
+## 11 Mystery        16
+## 12 Sci-Fi          7
+## 13 Family          3
+## 14 Musical         2
+## 15 Romance         2
+## 16 Western         2
+## 17 Thriller        1</code></pre></li>
+<li><p>Produce a table with the average gross earning and budget (<code>gross</code> and <code>budget</code>) by genre. Calculate a variable <code>return_on_budget</code> which shows how many $ did a movie make at the box office for each $ of its budget. Ranked genres by this <code>return_on_budget</code> in descending order</p>
+<pre class="r"><code># Create table with the average gross earning and budget
+avg_genre = movies%&gt;%
+  group_by(genre) %&gt;% 
+  summarize(avg_earning = sum(gross)/count(genre),
+            avg_budget = sum(budget)/count(genre)) # Create 2 columns to store the average earning and budget
+avg_genre%&gt;% 
+  mutate(return_on_budget = avg_earning/avg_budget) %&gt;% # The return is just the earning/budget
+  arrange(desc(return_on_budget))</code></pre>
+<pre><code>## # A tibble: 17 × 4
+##    genre       avg_earning avg_budget return_on_budget
+##    &lt;chr&gt;             &lt;dbl&gt;      &lt;dbl&gt;            &lt;dbl&gt;
+##  1 Musical       92084000    3189500          28.9    
+##  2 Family       149160478.  14833333.         10.1    
+##  3 Western       20821884    3465000           6.01   
+##  4 Documentary   17353973.   5887852.          2.95   
+##  5 Horror        37713738.  13504916.          2.79   
+##  6 Fantasy       42408841.  17582143.          2.41   
+##  7 Comedy        42630552.  24446319.          1.74   
+##  8 Mystery       67533021.  39218750           1.72   
+##  9 Animation     98433792.  61701429.          1.60   
+## 10 Biography     45201805.  28543696.          1.58   
+## 11 Adventure     95794257.  66290069.          1.45   
+## 12 Drama         37465371.  26242933.          1.43   
+## 13 Crime         37502397.  26596169.          1.41   
+## 14 Romance       31264848.  25107500           1.25   
+## 15 Action        86583860.  71354888.          1.21   
+## 16 Sci-Fi        29788371.  27607143.          1.08   
+## 17 Thriller          2468     300000           0.00823</code></pre></li>
+<li><p>Produce a table that shows the top 15 directors who have created the highest gross revenue in the box office. Don’t just show the total gross amount, but also the mean, median, and standard deviation per director.</p>
+<pre class="r"><code># Calculate summary statistics for top 15 directors 
+Top_directors = movies%&gt;%
+  group_by(director) %&gt;% 
+  summarise(sum_gross = sum(gross),
+            mean_gross = mean(gross),
+            median_gross = median(gross),
+            SD_gross = sd(gross))
+# Choose the top 15 with highest gross earnings
+Top_directors%&gt;%
+  slice_max(sum_gross,n = 15)</code></pre>
+<pre><code>## # A tibble: 15 × 5
+##    director           sum_gross mean_gross median_gross   SD_gross
+##    &lt;chr&gt;                  &lt;dbl&gt;      &lt;dbl&gt;        &lt;dbl&gt;      &lt;dbl&gt;
+##  1 Steven Spielberg  4014061704 174524422.   164435221  101421051.
+##  2 Michael Bay       2231242537 171634041.   138396624  127161579.
+##  3 Tim Burton        2071275480 129454718.    76519172  108726924.
+##  4 Sam Raimi         2014600898 201460090.   234903076  162126632.
+##  5 James Cameron     1909725910 318287652.   175562880. 309171337.
+##  6 Christopher Nolan 1813227576 226653447    196667606. 187224133.
+##  7 George Lucas      1741418480 348283696    380262555  146193880.
+##  8 Robert Zemeckis   1619309108 124562239.   100853835   91300279.
+##  9 Clint Eastwood    1378321100  72543216.    46700000   75487408.
+## 10 Francis Lawrence  1358501971 271700394.   281666058  135437020.
+## 11 Ron Howard        1335988092 111332341    101587923   81933761.
+## 12 Gore Verbinski    1329600995 189942999.   123207194  154473822.
+## 13 Andrew Adamson    1137446920 284361730    279680930. 120895765.
+## 14 Shawn Levy        1129750988 102704635.    85463309   65484773.
+## 15 Ridley Scott      1128857598  80632686.    47775715   68812285.</code></pre></li>
+<li><p>Finally, ratings. Produce a table that describes how ratings are distributed by genre. We don’t want just the mean, but also, min, max, median, SD and some kind of a histogram or density graph that visually shows how ratings are distributed.</p>
+<pre class="r"><code># Calculate summary statistics for ratings by genre
+Ratings_genre = movies%&gt;%
+  group_by(genre)%&gt;%
+  summarise(mean_ratings = mean(rating),
+            min_rating = min(rating),
+            max_rating = max(rating),
+            median_rating = median(rating),
+            SD_rating = sd(rating))
+Ratings_genre</code></pre>
+<pre><code>## # A tibble: 17 × 6
+##    genre       mean_ratings min_rating max_rating median_rating SD_rating
+##    &lt;chr&gt;              &lt;dbl&gt;      &lt;dbl&gt;      &lt;dbl&gt;         &lt;dbl&gt;     &lt;dbl&gt;
+##  1 Action              6.23        2.1        9            6.3      1.03 
+##  2 Adventure           6.51        2.3        8.6          6.6      1.09 
+##  3 Animation           6.65        4.5        8            6.9      0.968
+##  4 Biography           7.11        4.5        8.9          7.2      0.760
+##  5 Comedy              6.11        1.9        8.8          6.2      1.02 
+##  6 Crime               6.92        4.8        9.3          6.9      0.849
+##  7 Documentary         6.66        1.6        8.5          7.4      1.77 
+##  8 Drama               6.73        2.1        8.8          6.8      0.917
+##  9 Family              6.5         5.7        7.9          5.9      1.22 
+## 10 Fantasy             6.15        4.3        7.9          6.45     0.959
+## 11 Horror              5.83        3.6        8.5          5.9      1.01 
+## 12 Musical             6.75        6.3        7.2          6.75     0.636
+## 13 Mystery             6.86        4.6        8.5          6.9      0.882
+## 14 Romance             6.65        6.2        7.1          6.65     0.636
+## 15 Sci-Fi              6.66        5          8.2          6.4      1.09 
+## 16 Thriller            4.8         4.8        4.8          4.8     NA    
+## 17 Western             5.7         4.1        7.3          5.7      2.26</code></pre>
+<pre class="r"><code># Plot ratings by genre
+ggplot(movies,aes(x=rating)) +
+  geom_density() +
+  labs(title=&quot;There are few completely unpopular movies with a rating of less than 5&quot;,subtitle = &quot;Density plot of movie ratings on IMDB&quot;,x = &quot;Rating&quot;, y = &quot;Density&quot;)+
+  theme_bw()</code></pre>
+<p><img src="/projects/Project2_files/figure-html/rating-1.png" width="768" style="display: block; margin: auto;" /></p></li>
+</ul>
 </div>
-<div id="including-plots" class="section level1">
-<h1>Including Plots</h1>
-<p>You can also embed plots. See Figure <a href="#fig:pie">1</a> for example:</p>
-<pre class="r"><code>par(mar = c(0, 1, 0, 1))
-pie(
-  c(280, 60, 20),
-  c(&#39;Sky&#39;, &#39;Sunny side of pyramid&#39;, &#39;Shady side of pyramid&#39;),
-  col = c(&#39;#0292D8&#39;, &#39;#F7EA39&#39;, &#39;#C4B632&#39;),
-  init.angle = -50, border = NA
-)</code></pre>
-<div class="figure"><span style="display:block;" id="fig:pie"></span>
-<img src="/projects/Project2_files/figure-html/pie-1.png" alt="A fancy pie chart." width="672" />
-<p class="caption">
-Figure 1: A fancy pie chart.
-</p>
+<div id="use-ggplot-to-answer-the-following" class="section level2">
+<h2>Use <code>ggplot</code> to answer the following</h2>
+<ul>
+<li>Examine the relationship between <code>gross</code> and <code>cast_facebook_likes</code>. Produce a scatterplot and write one sentence discussing whether the number of facebook likes that the cast has received is likely to be a good predictor of how much money a movie will make at the box office. What variable are you going to map to the Y- and X- axes?</li>
+</ul>
+<p>While there seems to be a minor correlation between the amount of cast facebook likes and the money a movie makes, the relationship is not strong enough to make it a good predictor of a movie’s success.</p>
+<pre class="r"><code># Map revenue vs Facebook likes
+movies%&gt;%
+ggplot(aes(x=cast_facebook_likes, y = gross)) +
+  geom_point()+scale_x_log10()+geom_smooth(method = &quot;lm&quot;, se = FALSE) +
+  labs(title=&quot;Cast Facebook likes do not seem to be a reliable predictor of movie success&quot;,subtitle = &quot;Scatterplot of number of cast facebook likes and movie gross revenue&quot;,x = &quot;Number of Cast Facebook Likes&quot;, y = &quot;Gross Revenue&quot;)+
+  theme_bw()</code></pre>
+<p><img src="/projects/Project2_files/figure-html/gross_on_fblikes-1.png" width="768" style="display: block; margin: auto;" /></p>
+<ul>
+<li>Examine the relationship between <code>gross</code> and <code>budget</code>. Produce a scatterplot and write one sentence discussing whether budget is likely to be a good predictor of how much money a movie will make at the box office.</li>
+</ul>
+<p>While a budget is surely not a guarantor of movie success , the fitted line has a positive slope and therefore implies that with rising budget comes rising gross revenue.</p>
+<pre class="r"><code> #Map revenue vs budget
+movies%&gt;%
+  ggplot(aes(x=budget,y=gross))+
+  geom_point()+geom_smooth(method = &quot;lm&quot;, se = FALSE) +
+  labs(title=&quot;A higher budget seems to positively affect movie gross revenue&quot;,subtitle = &quot;Scatterplot of movie budget and movie gross revenue&quot;,x = &quot;Budget&quot;, y = &quot;Gross Revenue&quot;)+
+  theme_bw()</code></pre>
+<p><img src="/projects/Project2_files/figure-html/gross_on_budget-1.png" width="768" style="display: block; margin: auto;" /></p>
+<ul>
+<li>Examine the relationship between <code>gross</code> and <code>rating</code>. Produce a scatterplot, faceted by <code>genre</code> and discuss whether IMDB ratings are likely to be a good predictor of how much money a movie will make at the box office. Is there anything strange in this dataset?</li>
+</ul>
+<p>Generally, higher ratings indicates higher gross earnings for all genres for which we have a significant amount of data. However, we can also see that it is possible for movies to have a good rating while not making a lot of money. This most likely concern the likes of indie movies, that receive strong support but never make it into the pop culture.</p>
+<p>There are some interesting anomalies in the data in the form of extreme values. Drama movies usually fall within the same range of gross revenues, however “Titanic” by James Cameron reports much higher values than the rest. Coincidentally, James Cameron is also the director for highest grossing movie in the data “Avatar”. It is also noticeable that there are no observable outliers for genres like comedy or adventure, even though there are several movies of the genre in the data. Apparently these categories do not display the required parameters to polarize the nation.</p>
+<pre class="r"><code># Map revenue vs rating, faceted by genre
+movies%&gt;%
+  ggplot(aes(x=rating, y = gross,color=genre))+
+  geom_point()+facet_wrap(~genre)+
+  labs(title=&quot;A higher rating seems to be correlated to higher gross revenues&quot;,subtitle = &quot;Faceted scatterplot of IMDB rating and movie gross revenue&quot;,x = &quot;IMDB Rating&quot;, y = &quot;Gross Revenue&quot;)</code></pre>
+<p><img src="/projects/Project2_files/figure-html/gross_on_rating-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 </div>
