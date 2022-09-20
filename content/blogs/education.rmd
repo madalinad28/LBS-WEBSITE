@@ -1,0 +1,31 @@
+---
+title: 'Education'
+author: "Madalina Dumitrescu"
+date: "September 2022"
+image: 
+output:
+  html_document:
+    highlight: zenburn
+    theme: flatly
+    toc: yes
+    toc_float: yes
+  word_document:
+    toc: yes
+---
+```{r load-libraries, warning=FALSE, message=FALSE, echo=FALSE}
+library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
+library(gapminder)  # gapminder dataset
+library(here)
+library(downloadthis)
+```
+*  **University of Warwick**               
+
+*Attended:* 2018-2022 <br>
+*Relevant Courses:* Data Visualization, Design of Information Structures, Database Systems, Managing of the Digital Era <br>
+*Relevant Projects*: [Digital Innovations in the Fashion Industry](file:///C:/blogs/final_project.pdf)
+
+
+
+```{r load image_5, warning=FALSE, message=FALSE, echo=FALSE}
+knitr::include_graphics("/img/blogs/education/warwick.png",error=FALSE)
+```

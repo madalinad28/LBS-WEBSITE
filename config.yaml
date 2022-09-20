@@ -8,9 +8,8 @@ params:
   banner:
     buttonText: Get Started
     subtitle: |-
-      Portofolio Website
+      LBS Master in Analytics and Management Student 
     title: Madalina Dumitrescu
-    image: pic02.jpg
   blog: {}
   contact:
     address:
@@ -57,62 +56,59 @@ params:
       - icon: fa-linkedin
         label: LinkedIn
         url: https://www.linkedin.com/in/madalina-dumitrescu/
-  image: 'pic02.jpg'
   name: Madalina Dumitrescu
   navigation:
     button1:
-      - name: Get Started
-        url: blogs
+      - name: Projects
+        url: projects/project1
     button2:
-      - name: Log In
+      - name: Download CV
         url: '#'
     links:
       - name: Home
         url: '#'
-      - name: Blogs
-        url: blogs
-      - name: Generic Blog
-        url: blogs/ipsum
+      - name: About Me
+        url: blogs/about_me
+      - name: Education
+        url: blogs/education
+      - name: Professional Experience
+        url: blogs/pofessional_experience
+      - name: Additional Information
+        url: blogs/additional_information
       - name: Elements
         url: elements.html
     menu: Menu
-    subtitle: By HTML5 Up
-    title: Forty
+    subtitle: Madalina Dumitrescu
+    title: Projects Portoflio
   tiles:
     enable: yes
     showcase:
       - image: pic01.jpg
-        subtitle: Ipsum Dolor Sit Amet
+        subtitle: Project 1
         title: Aliquam
-        url: blogs/aliquam
+        url: projects/project1
       - image: pic02.jpg
-        subtitle: Feugiat Amet Tempus
+        subtitle: Project 2
         title: Tempus
         url: blogs/tempus
       - image: pic03.jpg
-        subtitle: Lorem Etiam Nullam
+        subtitle: Project 3
         title: Magna
         url: blogs/magna
       - image: pic04.jpg
-        subtitle: Nisl Sed Aliquam
+        subtitle: Project 4
         title: Ipsum
         url: blogs/ipsum
       - image: pic05.jpg
-        subtitle: Ipsum Dolor Sit Amet
+        subtitle: Project 5
         title: Consequat
         url: blogs/ipsum
       - image: pic06.jpg
-        subtitle: Feugiat Amet Tempus
+        subtitle: Project 6
         title: Etiam
         url: blogs/ipsum
   two:
-    buttonText: Get Started
+    buttonText: About Me
     enable: yes
-    subtitle: "Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero.
-      \n    Mauris aliquet magna magna sed nunc rhoncus pharetra. \n    Pellentesque
-      condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia
-      pellentesque lorem ipsum dolor. \n    Nullam et orci eu lorem consequat tincidunt.
-      Vivamus et sagittis libero.\n    Mauris aliquet magna magna sed nunc rhoncus
-      amet pharetra et feugiat tempus."
-    title: Massa libero
+    title: Find out more about me
     url: blogs

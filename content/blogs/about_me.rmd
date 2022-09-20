@@ -1,0 +1,70 @@
+---
+title: 'About Me'
+author: "Madalina Dumitrescu"
+date: "September 2022"
+image: 
+output:
+  html_document:
+    highlight: zenburn
+    theme: flatly
+    toc: yes
+    toc_float: yes
+  word_document:
+    toc: yes
+---
+
+```{r load-libraries, warning=FALSE, message=FALSE, echo=FALSE}
+library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
+library(gapminder)  # gapminder dataset
+library(here)
+```
+
+# Brief Description
+
+```{r load image, warning=FALSE, message=FALSE, echo=FALSE}
+knitr::include_graphics("/img/blogs/me_photo.png",error=FALSE)
+```
+
+I am a passionate computer scientist, currently studying at the London Business School, who is always looking for ways to improve herself and develop her abilities. My desire to better understand how technology can be used drove me to minor in business studies, giving me the chance to discover how can I fit my technical skills in the bigger picture. 
+
+I am an extremely versatile person, and this is highlighted by my professional experiences. From being a technology coordinator of the biggest student-led summit in Europe to being involved in numerous charitable projects (organizing events, developing web platforms, rebranding), all of these helped me improve my leadership, team-working, communication, and time-management skills, shaping me into whom I have become today. 
+
+On top of that, my desire to enrich my understanding of how technology shapes the financial sector pushed me to begin my career in the banking industry, where I had the chance to work in a cutting edge environment and actively apply my already acquired knowledge, further developing them as I progressed. 
+
+ Although it may be hard to sum up this short presentation, one thing is sure: If you are looking for someone who can adapt quickly to any type of environment and will give their total interest, you might want to know more about me. 
+
+# My background
+
+## Romania
+Until I started my higher education journey, I lived in Romania, more specifically Bucharest, where I studied at one of the best high schools in the country, which helped me define myself and the trajectory that I wanted in my life. 
+
+```{r load image_2, warning=FALSE, message=FALSE, echo=FALSE}
+knitr::include_graphics("/img/blogs/about_me/about_me_1.png",error=FALSE)
+```
+
+## University of Warwick
+After I graduated, I decided to pursue my higher studies in the UK, at University of Warwick, where I prepared for a degree in both Computer Science and Business. Here, I had the chance to strongly develop my technical skills through the numerous projects I had, while also enhancing my personal capabilities, through the [extra-curricular activities](/blogs/additional_information) experiences I took part in. 
+
+## Year Abroad
+For my third year, I decided to embark on a new journey and pursue an year abroad, as I was eager to develop my skills in new environments and grow my capacity to adapt. Therefore, I did my first semester in Canada, at Schulich School of Business, York University, program which I attended online due to the Covid19 crisis. However, this setback did not hold me back from making the most of my virtual experience, by getting involved with the Exchange Students Club and other relevant activities. For my second semester, I was lucky enough to attend Universitat Pompeu Fabra in Barcelona, Spain, in person, where I enhanced my understanding of business concepts while also enjoying a sunny and marvelous city.
+
+```{r load image_3, warning=FALSE, message=FALSE, echo=FALSE}
+knitr::include_graphics("/img/blogs/about_me/about_me_2 .png",error=FALSE)
+```
+
+## Summer Experience
+
+```{r load image_4, warning=FALSE, message=FALSE, echo=FALSE}
+knitr::include_graphics("/img/blogs/about_me/about_me_3.png",error=FALSE)
+```
+
+## Graduation 
+
+```{r load image_5, warning=FALSE, message=FALSE, echo=FALSE}
+knitr::include_graphics("/img/blogs/about_me/about_me_4.png",error=FALSE)
+```
+
+## London Business School 
+
+## What I am looking forward next
+
