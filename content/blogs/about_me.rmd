@@ -2,7 +2,7 @@
 title: 'About Me'
 author: "Madalina Dumitrescu"
 date: "September 2022"
-image: about_me/about-me.png
+image: about_me/me_photo.png
 output:
   html_document:
     highlight: zenburn
@@ -21,9 +21,6 @@ library(here)
 
 # Brief Description
 
-```{r load image, out.width = "400px", warning=FALSE, message=FALSE, echo=FALSE}
-knitr::include_graphics("/img/blogs/me_photo.png",error=FALSE)
-```
 
 I am a passionate computer scientist, currently studying at the London Business School, who is always looking for ways to improve herself and develop her abilities. My desire to better understand how technology can be used drove me to minor in business studies, giving me the chance to discover how can I fit my technical skills in the bigger picture. 
 

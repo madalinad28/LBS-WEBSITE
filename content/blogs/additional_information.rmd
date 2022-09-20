@@ -2,7 +2,7 @@
 title: 'Additional Information'
 author: "Madalina Dumitrescu"
 date: "September 2022"
-image: extra/extra.jpg
+image: extra/extra.jpeg
 output:
   html_document:
     highlight: zenburn
