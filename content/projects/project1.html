@@ -29,12 +29,11 @@ glimpse(omega) # examine the data frame</code></pre>
 ## $ salary     &lt;dbl&gt; 81894, 69517, 68589, 74881, 65598, 76840, 78800, 70033, 635…
 ## $ gender     &lt;chr&gt; &quot;male&quot;, &quot;male&quot;, &quot;male&quot;, &quot;male&quot;, &quot;male&quot;, &quot;male&quot;, &quot;male&quot;, &quot;ma…
 ## $ experience &lt;dbl&gt; 16, 25, 15, 33, 16, 19, 32, 34, 1, 44, 7, 14, 33, 19, 24, 3…</code></pre>
+<p>The data frame <code>omega</code> contains the salaries for the sample of 50 executives in the company.</p>
 </div>
 <div id="relationship-salary---gender" class="section level2">
-<h2>Relationship Salary - Gender ?</h2>
-<p>The data frame <code>omega</code> contains the salaries for the sample of 50 executives in the company. Can you conclude that there is a significant difference between the salaries of the male and female executives? Note that you can perform different types of analyses, and check whether they all lead to the same conclusion</p>
-<p>. Confidence intervals . Hypothesis testing . Correlation analysis . Regression</p>
-<p>Calculate summary statistics on salary by gender. Also, create and print a dataframe where, for each gender, you show the mean, SD, sample size, the t-critical, the SE, the margin of error, and the low/high endpoints of a 95% confidence interval</p>
+<h2>Relationship Salary - Gender</h2>
+<p>Here, I calculate summary statistics on salary by gender. Also, I create and print a dataframe where, for each gender, I show the mean, SD, sample size, the t-critical, the SE, the margin of error, and the low/high endpoints of a 95% confidence interval</p>
 <pre class="r"><code># Summary Statistics with favstats
 mosaic::favstats(salary ~ gender, data=omega)</code></pre>
 <pre><code>##   gender   min    Q1 median    Q3   max  mean   sd  n missing
@@ -59,11 +58,10 @@ omega_summary</code></pre>
 ## 2 male        73239.     7463.        24    2.07   1523.   3151.  70088.  76390.
 ## # … with abbreviated variable names ¹​sample_size, ²​t_critical, ³​se_salary,
 ## #   ⁴​margin_of_error, ⁵​salary_low, ⁶​salary_high</code></pre>
-<blockquote>
-<p>What can you conclude from your analysis? A couple of sentences would be enough.</p>
-</blockquote>
+<p>###Results</p>
 <p>A glimpse at the summary statistics table provides some clarity of the salary distribution. It is clearly visible that the standard deviation, sample size, standard error and margin of error are very similar for both genders. Meanwhile, the min and max values of the confidence intervals don’t overlap. This essentially tells us that while male and female employees both experience the same variance of salaries within their gender (most likely due to position), the average from which these salaries vary from is significantly different. We can therefore claim with 95% confidence that the true average salary for the female population at Omega is lower than that of the male population.</p>
-<p>You can also run a hypothesis testing, assuming as a null hypothesis that the mean difference in salaries is zero, or that, on average, men and women make the same amount of money. You should tun your hypothesis testing using <code>t.test()</code> and with the simulation method from the <code>infer</code> package.</p>
+<p>###Hypothesis testing</p>
+<p>I also ran a hypothesis testing, assuming as a null hypothesis that the mean difference in salaries is zero, or that, on average, men and women make the same amount of money.</p>
 <pre class="r"><code># Set seed for reproducibility
 set.seed(1234)
 
@@ -107,9 +105,6 @@ hypothesis_testing_salary %&gt;%
 ##   p_value
 ##     &lt;dbl&gt;
 ## 1       0</code></pre>
-<blockquote>
-<p>What can you conclude from your analysis? A couple of sentences would be enough.</p>
-</blockquote>
 <p>We reject the null hypothesis that there is no difference in average salary at Omega based on gender. A p-value of 0.0002 is statistically significant and the confidence interval of the two sample t-test does not include 0. The graph also highlights that a bootstrap simulation yields the same result. The red line informs us that the observed difference is outside the values we would expect if there was no significant difference in salaries. It should also be mentioned that the t-test for the difference in means shows the confidence interval of how much less female employees earn on average compared to men.</p>
 </div>
 <div id="relationship-experience---gender" class="section level2">
